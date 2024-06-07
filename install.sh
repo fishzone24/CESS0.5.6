@@ -61,15 +61,29 @@ function config_node() {
 
 # 启动节点
 function start_node() {
-	sudo cess start
+    sudo cess start
+    echo "节点已启动。"
 }
 
-# Check CESS Chain Sync Status
+# 暂停服务
+function pause_services() {
+    sudo cess stop
+    echo "服务已暂停。"
+}
+
+# 增加存储节点的质押
+function increase_miner_staking() {
+    echo "请输入质押金额（输入多少就是多少）："
+    read deposit_amount
+    sudo cess bucket increase staking $deposit_amount
+    echo "质押增加成功。"
+}
+# 检查节点同步情况Check CESS Chain Sync Status
 function check_cess_chain_sync_status() {
 	docker logs chain
 }
 
-# View the Storage Node Log
+# 查询节点日志View the Storage Node Log
 function view_storage_node_log() {
 	docker logs bucket
 }
@@ -80,7 +94,7 @@ function view_bucket_status() {
 }
 
 
-# Stop and Remove All Services
+# 停止并移除所有服务Stop and Remove All Services
 function stop_and_remove_services() {
 	sudo cess down
 }
@@ -92,21 +106,25 @@ function main_menu() {
     echo "1. 安装节点"
     echo "2. 配置节点"
     echo "3. 启动节点"
-    echo "4. Check CESS Chain Sync Status"
-    echo "5. View the Storage Node Log"
-    echo "6. View Bucket Status"
-    echo "7. Stop and Remove All Services"
-    read -p "请输入选项（1-6）: " OPTION
+    echo "4. 暂停服务"
+    echo "5. 增加存储节点质押"
+    echo "6. Check CESS Chain Sync Status"
+    echo "7. View the Storage Node Log"
+    echo "8. View Bucket Status"
+    echo "9. Stop and Remove All Services"
+    read -p "请输入选项（1-9）: " OPTION
 
     case $OPTION in
     1) install_node ;;
     2) config_node ;;
     3) start_node ;;
-    4) check_cess_chain_sync_status ;;
-    5) view_storage_node_log ;;
-    6) view_bucket_status ;;
-    7) stop_and_remove_services ;;
-   *) echo "无效选项。"; main_menu;;
+    4) pause_services ;;
+    5) increase_miner_staking ;;
+    6) check_cess_chain_sync_status ;;
+    7) view_storage_node_log ;;
+    8) view_bucket_status ;;
+    9) stop_and_remove_services ;;
+    *) echo "无效选项。"; main_menu;;
     esac
 }
 
