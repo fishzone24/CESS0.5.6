@@ -21,8 +21,7 @@ function install_node() {
 
 		# 验证 Docker Engine 安装是否成功
 		sudo docker run hello-world
-		# 应该能看到 hello-world 程序的输出
-
+		
 		# 检查 Docker Compose 版本
 		docker-compose -v
 	else
