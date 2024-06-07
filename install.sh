@@ -77,12 +77,12 @@ function increase_miner_staking() {
     sudo cess bucket increase staking $deposit_amount
     echo "质押增加成功。"
 }
-# 检查节点同步情况Check CESS Chain Sync Status
+# Check CESS Chain Sync Status
 function check_cess_chain_sync_status() {
 	docker logs chain
 }
 
-# 查询节点日志View the Storage Node Log
+# View the Storage Node Log
 function view_storage_node_log() {
 	docker logs bucket
 }
@@ -107,10 +107,10 @@ function main_menu() {
     echo "3. 启动节点"
     echo "4. 暂停服务"
     echo "5. 增加存储节点质押"
-    echo "6. Check CESS Chain Sync Status"
-    echo "7. View the Storage Node Log"
-    echo "8. View Bucket Status"
-    echo "9. Stop and Remove All Services"
+    echo "6. 检查节点同步情况"
+    echo "7. 查询节点日志"
+    echo "8. 查询Bucket状态"
+    echo "9. 停止并移除所有服务"
     read -p "请输入选项（1-9）: " OPTION
 
     case $OPTION in
