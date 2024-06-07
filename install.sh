@@ -72,7 +72,7 @@ function pause_services() {
 
 # 增加存储节点的质押
 function increase_miner_staking() {
-    echo "请输入质押金额（输入多少就是多少）："
+    echo "请输入质押金额（输入多少就是多少，单位是 个）："
     read deposit_amount
     sudo cess bucket increase staking $deposit_amount
     echo "质押增加成功。"
