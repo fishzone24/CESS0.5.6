@@ -93,7 +93,7 @@ function view_bucket_status() {
 }
 
 
-# 停止并移除所有服务Stop and Remove All Services
+# Stop and Remove All Services
 function stop_and_remove_services() {
 	sudo cess down
 }
