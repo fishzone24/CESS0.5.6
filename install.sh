@@ -102,6 +102,7 @@ function stop_and_remove_services() {
 # 主菜单
 function main_menu() {
     clear
+    echo "此脚本由推特@fishzone24 修改及更新，欢迎使用"
     echo "1. 安装节点"
     echo "2. 配置节点"
     echo "3. 启动节点"
