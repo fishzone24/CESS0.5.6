@@ -42,10 +42,10 @@ function install_node() {
 	fi
 
 	# 安装cess节点
-	wget https://github.com/CESSProject/cess-nodeadm/archive/v0.5.6.tar.gz
-	tar -xvzf v0.5.6.tar.gz
-	cd cess-nodeadm-0.5.6/ && ./install.sh
-
+	wget https://github.com/CESSProject/cess-nodeadm/archive/v0.5.8.tar.gz
+	tar -xvzf v0.5.8.tar.gz
+	cd cess-nodeadm-0.5.8/
+	./install.sh
 }
 
 # 节点配置
